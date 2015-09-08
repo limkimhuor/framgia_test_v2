@@ -19,6 +19,7 @@ gem "bootstrap-sass"
 gem "jquery-countdown-rails"
 gem "chatwork"
 gem "rails_admin"
+gem "rails_admin_import", "~> 1.2"
 group :production do
   gem "unicorn"
 end

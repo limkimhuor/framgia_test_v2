@@ -20,3 +20,7 @@ en:
         title: "Details for %{object_label}"
         menu: "Show"
         breadcrumb: "%{object_label}"
+      import_question:
+        title: "Import"
+        menu: "Import"
+        breadcrumb: "Import"

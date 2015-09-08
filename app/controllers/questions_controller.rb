@@ -49,6 +49,11 @@ class QuestionsController < ApplicationController
     redirect_to user_questions_path current_user
   end
 
+  def import
+    Question.import(params[:file])
+    redirect_to root_url, notice: "Question imported"
+  end
+
   private
   def question_params
     params.require(:question).permit :content, :subject_id, :user_id,

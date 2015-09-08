@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root "exams#index"
   resources :exams, only: [:index, :create]
   resources :users do
-    resources :questions
+    resources :questions do
+      collection { post :import_quesiton }
+    end
   end
   resources :exams, only: [:index, :show, :create, :update]
 end

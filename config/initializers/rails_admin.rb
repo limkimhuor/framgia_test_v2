@@ -8,6 +8,8 @@ require Rails.root.join("lib", "rails_admin", "create_question.rb")
 RailsAdmin::Config::Actions.register(RailsAdmin::Config::Actions::CreateQuestion)
 require Rails.root.join("lib", "rails_admin", "show_question.rb")
 RailsAdmin::Config::Actions.register(RailsAdmin::Config::Actions::ShowQuestion)
+require Rails.root.join("lib", "rails_admin", "import_question.rb")
+RailsAdmin::Config::Actions.register(RailsAdmin::Config::Actions::ImportQuestion)
 
 
 RailsAdmin.config do |config|
@@ -29,6 +31,9 @@ RailsAdmin.config do |config|
       except ["Exam", "Question"]
     end
     export
+    import_question do
+      only Question
+    end
     bulk_delete
     mark_exam
     show_question
